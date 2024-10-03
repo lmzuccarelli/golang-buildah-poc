@@ -7,7 +7,6 @@ require (
 	github.com/containers/common v0.60.3
 	github.com/containers/image/v5 v5.32.2
 	github.com/containers/storage v1.55.0
-	github.com/otiai10/copy v1.14.0
 )
 
 require (
