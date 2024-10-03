@@ -13,8 +13,6 @@ build:
 build-dev:
 	mkdir -p build
 	GOOS=linux go build -ldflags="-s -w" -o build -tags real./...
-	chmod 755 build/microservice
-	chmod 755 build/uid_entrypoint.sh
 
 verify:
 	golangci-lint run -c .golangci.yaml --deadline=30m
@@ -29,9 +27,3 @@ cover:
 clean:
 	rm -rf build/*
 	go clean ./...
-
-container:
-	podman build -t  ${REGISTRY_BASE}/${IMAGE_NAME}:${IMAGE_VERSION} .
-
-push:
-	podman push --authfile=${HOME}/.docker/config.json ${REGISTRY_BASE}/${IMAGE_NAME}:${IMAGE_VERSION} 
