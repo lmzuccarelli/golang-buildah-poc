@@ -1,4 +1,4 @@
 
-podman system reset -> when you uencounter errors
+podman system reset -> when encountering errors
 
 
